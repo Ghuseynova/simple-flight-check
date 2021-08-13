@@ -1,0 +1,116 @@
+.flist {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0 2rem 2rem;
+    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+
+    &-col {
+      &--center {
+        margin: 0 9% 0 4%;
+      }
+
+      &--right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      &-item {
+        display: flex;
+        margin-top: 0.4rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &-departure,
+    &-arrival {
+      font-weight: 300;
+      font-size: 1.7rem;
+      font-family: 'SF Pro Text';
+      line-height: 2.2rem;
+    }
+
+    &-departure {
+      position: relative;
+      padding-right: 3.6rem;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 1.2rem;
+        display: inline-block;
+        width: 1.2rem;
+        height: 0.8rem;
+        background: url(../../../assets/images/icon-arrow-pointing.svg)
+          no-repeat center;
+        background-size: cover;
+        transform: translateY(-50%);
+        content: '';
+      }
+    }
+
+    &-date,
+    &-time,
+    &-airplane {
+      color: #878787;
+      font-weight: normal;
+      font-size: 1.4rem;
+      font-family: 'SF Pro Text';
+      font-style: normal;
+    }
+
+    &-date {
+      position: relative;
+      padding-right: 3rem;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 1.2rem;
+        display: inline-block;
+        width: 0.9rem;
+        height: 0.1rem;
+        background: url(../../../assets/images/icon-line.svg) no-repeat center;
+        background-size: cover;
+        transform: translateY(-50%);
+        content: '';
+      }
+    }
+
+    &-fav {
+      width: 2.2rem;
+      height: 1.8rem;
+      margin-right: 1.2rem;
+      background: url(../../../assets/images/icon-heart-empty.svg) no-repeat
+        center;
+      background-size: contain;
+      transition: background-image 0.4s;
+      cursor: pointer;
+
+      &.is-added {
+        background-image: url(../../../assets/images/icon-heart-filled.svg);
+      }
+    }
+
+    &-price {
+      margin-top: 2.2rem;
+      font-weight: 300;
+      font-size: 1.1rem;
+      font-family: 'SF Pro Text';
+      line-height: 2.2rem;
+
+      span {
+        display: inline-block;
+        margin: 0 0.5rem 0 0.8rem;
+        font-weight: normal;
+        font-size: 1.7rem;
+        font-family: 'SF Pro Text';
+        line-height: 2.2rem;
+      }
+    }
+  }
+}

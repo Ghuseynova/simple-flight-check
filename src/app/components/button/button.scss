@@ -1,0 +1,55 @@
+.btn {
+  display: inline-block;
+  padding: 0.8rem 3.5rem;
+  font-size: 1.6rem;
+  font-family: Roboto;
+  line-height: 1.9rem;
+  background: none;
+  border: 0;
+  border-radius: 0.4rem;
+  cursor: pointer;
+
+  &--blue {
+    color: #fff;
+    background: linear-gradient(104.34deg, #3c4cad -15.34%, #00c3ff 145.95%);
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.4s, background 0.4s, border 0.4s;
+
+    &:hover {
+      background: linear-gradient(104.34deg, #3c4cad -15.34%, #00c3ff 145.95%);
+      box-shadow: 0 0 0.4rem #99a0a3;
+    }
+
+    &:active {
+      background: linear-gradient(104.34deg, #5362be -15.34%, #4ad5ff 145.95%);
+      border: 0.15rem solid rgba(29, 138, 216, 0.3);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--logout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: #1157a7;
+    font-weight: normal;
+    font-size: 2rem;
+    font-family: 'SF Pro Text';
+    line-height: 2.2rem;
+
+    &::after {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-left: 1.6rem;
+      background: url(../../../assets/images/icon-logout.svg) no-repeat center;
+      background-size: cover;
+      content: '';
+    }
+  }
+}
