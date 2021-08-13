@@ -6,8 +6,6 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas';
 import appReducer from './reducers';
 
-console.log(appReducer);
-
 const sagaMiddleware = createSagaMiddleware();
 
 const saveState = (state) => {
@@ -16,7 +14,7 @@ const saveState = (state) => {
 
     window.localStorage.setItem('app_state', serialisedState);
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 
@@ -40,16 +38,6 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware, logger))
 );
 
-// store.dispatch({
-//   type: 'LOGGED_IN',
-//   payload: {
-//     login: 'fskjhskjf',
-//     password: '12324',
-//     isLogged: true,
-//   },
-// });
-
-// console.log(store.getState());
 store.subscribe(() => {
   saveState(store.getState());
 });

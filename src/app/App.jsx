@@ -6,7 +6,6 @@ import FlightList from './pages/flight-list';
 import Login from './pages/login';
 
 const App = ({ isLogged }) => {
-  console.log(isLogged);
   return (
     <Router>
       <div>
@@ -23,6 +22,5 @@ const App = ({ isLogged }) => {
 };
 
 export default connect((state) => {
-  console.log(state);
   return { isLogged: state.user.isLogged };
 }, null)(App);

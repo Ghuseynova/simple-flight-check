@@ -31,7 +31,6 @@ class FlightList extends Component {
   componentDidMount() {
     const { getFlights } = this.props;
     const date = new Date();
-    console.log(date);
     getFlights(formatDate(date));
   }
 
@@ -52,7 +51,6 @@ class FlightList extends Component {
   render() {
     const { flights, favs, addToFav, removeFromFav } = this.props;
     const { startDate } = this.state;
-    console.log(flights, favs);
     return (
       <div className="flight-list">
         <Button

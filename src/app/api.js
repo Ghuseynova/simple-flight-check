@@ -40,8 +40,6 @@ class Api {
           price,
         };
 
-        console.log(data);
-
         return data;
       });
 

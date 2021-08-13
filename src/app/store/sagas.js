@@ -16,8 +16,6 @@ import {
 } from './types';
 
 function* login(action) {
-  console.log(action);
-
   const { email, password } = action.user;
   const auth = firebase.auth();
 
@@ -27,8 +25,6 @@ function* login(action) {
       email,
       password
     );
-
-    console.log(result);
 
     yield put({ type: LOGIN_SUCCESS, user: action.user });
   } catch (error) {
@@ -52,8 +48,6 @@ function* logout() {
     const auth = firebase.auth();
     const result = yield call([auth, auth.signOut]);
 
-    console.log(result);
-
     yield put({ type: LOGOUT_SUCCESS, payload: '' });
   } catch (error) {
     const error_message = { code: error.code, message: error.message };
@@ -64,11 +58,8 @@ function* logout() {
 
 function* fetchFlights(action) {
   const { date } = action;
-  console.log(date);
   try {
     const flights = yield call(Api.fetchFlights, date);
-
-    console.log(flights);
 
     yield put({ type: FETCH_FLIGTS_SUCCESS, flights: flights });
   } catch (error) {

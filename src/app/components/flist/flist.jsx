@@ -4,7 +4,6 @@ import PlainIcon from '../../../assets/images/icon-plain.svg';
 import './flist.scss';
 
 const Flist = ({ flightList, favs, addToFav, removeFromFav }) => {
-  console.log(flightList);
   const fListItems =
     flightList !== null &&
     flightList.map((fListItem, index) => {
@@ -19,7 +18,6 @@ const Flist = ({ flightList, favs, addToFav, removeFromFav }) => {
       } = fListItem;
 
       const isFav = favs.includes(id);
-      console.log(isFav, id);
 
       return (
         <li className="flist__item" key={`item_${index}`}>
